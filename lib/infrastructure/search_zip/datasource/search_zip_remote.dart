@@ -10,7 +10,7 @@ class SearchZipRemoteDataSource{
       String googleAPIKey = "Google Api Key";
       String baseURL = 'https://maps.googleapis.com/maps/api/place/autocomplete/json';
       String request = '$baseURL?input=$zipCode&components=country:in&key=$googleAPIKey';
-      var response = await http.get(Uri.parse(request));git commit -m "first commit"
+      var response = await http.get(Uri.parse(request));
       if(response.statusCode==200){
         var parsed = json.decode(utf8.decode(response.bodyBytes));
         List predictions = parsed['predictions'];
